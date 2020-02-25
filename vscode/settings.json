@@ -1,0 +1,21 @@
+{
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.sideBar.location": "right",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "SynthWave '84",
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "editor.tabSize": 2,
+    "prettier.useTabs": true,
+    "editor.formatOnSave": true,
+    "editor.cursorBlinking": "solid",
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "explorer.compactFolders": false,
+    "editor.multiCursorModifier": "ctrlCmd"
+}
