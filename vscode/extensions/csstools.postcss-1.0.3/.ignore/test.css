@@ -1,0 +1,206 @@
+@custom-media --sm (width >= 30em);
+@custom-selector :--heading h1, h2, h3, h4, h5, h6;
+
+@value blue: #0c77f8;
+@value red: #ff0000;
+@value green: #aaf200;
+@value colors: "./colors.css";
+@value blue, red, green from colors;
+@value blue, red, green from "./colors.css";
+@value blue, red, green from './colors.css';
+
+body :--heading {
+	color: blue;
+
+	@media screen (--sm) {
+		color: var(--blue, blue);
+	}
+}
+
+a {
+	cursor: pointer;
+}
+
+:--code-inline {
+	/* Move to framework? */
+	background-color: var(--background-color);
+	@extend .c-contrast, .p1;
+	display: inline-block;
+}
+
+@custom-media --sm (max-width: 30em);
+@custom-media --md screen (width > env(--md, 640px));
+@custom-selector :--heading h1, h2, h3, h4, h5, h6;
+@custom- who knows what happens next;
+
+// can you hear me now 1
+
+@media (--sm) { // can you hear me now 1
+	.test { // CAN YOU HEAR ME NOW
+		color: green; // CAN YOU HEAR ME NOW
+	} // can you hear me now 1
+} // can you hear me now 1
+
+.test-nesting-rules:--heading { // CAN YOU HEAR ME NOW
+	order: 4; // CAN YOU HEAR ME NOW
+
+	// CAN YOU HEAR ME NOW
+
+	& p { // CAN YOU HEAR ME NOW
+		order: 5; // CAN YOU HEAR ME NOW
+	} // CAN YOU HEAR ME NOW
+
+	order: 6;
+	// CAN YOU HEAR ME NOW
+
+	// CAN YOU HEAR ME NOW
+	@unknown thing {} // CAN YOU HEAR ME NOW
+
+	@supports (display: grid) {} // CAN YOU HEAR ME NOW
+}
+
+a.css:is(code.selector) {
+	color: blue;
+
+	&.css:is(code.selector) {
+		color: green;
+	}
+}
+
+.test-nesting-rules {
+	order: 4;
+
+	& p {
+		order: 5;
+	}
+
+	order: 6;
+}
+
+input:blank:where(.every_thing:is(.awesome, .when), u.r[part-of="a team"]) {
+	composes: classNameA classNameB from "./style.css";
+	background-color: lab(240 50 20);
+	color: lch(240 50 20);
+	box-shadow: 0 0 0 10px hwb(120deg 100% 25% / env(--eighty-percent, 80%));
+	font-family: system-ui, "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	margin-block: 50px;
+	padding-block:
+		env(safe-area-inset-top, 20px)
+		env(safe-area-inset-bottom, 20px)
+	;
+	place-self: flex-start / center;
+
+	@media (prefers-color-scheme: dark) {
+		background-color: black;
+		color: white;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		animation: none;
+	}
+
+	@media (max-width: env(--md, 640px)) {
+		@nest body & {
+			margin-inline: calc(env(--brand-spacing) * var(--two, 2));
+			padding-inline: env(--brand-spacing);
+		}
+	}
+
+	@unknown thing {
+		color: green;
+	}
+}
+
+a.css:matches(code.selector) {
+	color: blue;
+
+	&.css:matches(code.selector) {
+		color: green;
+	}
+
+	@nest a.css:matches(code.selector) {
+		color: blue;
+
+		&.then:matches(code.deeper) {
+			@nest a.css:matches(code.selector) {
+				color: blue;
+			}
+		}
+	}
+
+	&.css:matches(code.selector) {
+		color: green;
+	}
+
+	@media screen (max-width: 640px) {
+		color: blue;
+
+		&.css:matches(code.selector) {
+			color: green;
+		}
+	}
+
+	&.css:matches(code.selector) {
+		color: green;
+	}
+
+	@supports (display: grid) {
+		color: blue;
+
+		&.css:matches(code.selector) {
+			color: green;
+		}
+	}
+
+	&.css:matches(code.selector) {
+		color: green;
+	}
+}
+
+@media screen (max-width: 640px) {
+	a.css:matches(code.selector) {
+		color: blue;
+
+		&.css:matches(code.selector) {
+			color: green;
+		}
+
+		@nest a.css:matches(code.selector) {
+			color: blue;
+
+			&.then:matches(code.deeper) {
+				@nest a.css:matches(code.selector) {
+					color: blue;
+				}
+			}
+		}
+
+		&.css:matches(code.selector) {
+			color: green;
+		}
+
+		@media screen (max-width: 640px) {
+			color: blue;
+
+			&.css:matches(code.selector) {
+				color: green;
+			}
+		}
+
+		&.css:matches(code.selector) {
+			color: green;
+		}
+
+		@supports (display: grid) {
+			color: blue;
+
+			&.css:matches(code.selector) {
+				color: green;
+			}
+		}
+
+		&.css:matches(code.selector) {
+			color: green;
+		}
+	}
+}

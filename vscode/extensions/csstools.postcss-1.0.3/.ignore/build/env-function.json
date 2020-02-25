@@ -1,0 +1,37 @@
+{
+  "begin": "(?i)(?<![\\w-])(env)(\\()",
+  "beginCaptures": {
+    "1": {
+      "name": "support.function.misc.css"
+    },
+    "2": {
+      "name": "punctuation.section.function.begin.bracket.round.css"
+    }
+  },
+  "end": "\\)",
+  "endCaptures": {
+    "0": {
+      "name": "punctuation.section.function.end.bracket.round.css"
+    }
+  },
+  "patterns": [
+    {
+      "match": "(--)?([-a-zA-Z_][\\w-]*)(?:,([^)]+))?",
+      "captures": {
+        "1": {
+          "name": "punctuation.definition.variable.env.css"
+        },
+        "2": {
+          "name": "variable.property.css"
+        },
+        "3": {
+          "patterns": [
+            {
+              "include": "#property-values"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

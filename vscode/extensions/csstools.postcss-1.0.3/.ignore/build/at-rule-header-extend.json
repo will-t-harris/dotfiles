@@ -1,0 +1,18 @@
+{
+  "name": "meta.at-rule.extend.header.css",
+  "begin": "(?i)\\G(@)extends?",
+  "beginCaptures": {
+    "0": {
+      "name": "keyword.control.at-rule.extend.css"
+    },
+    "1": {
+      "name": "punctuation.definition.keyword.css"
+    }
+  },
+  "end": "(?=;)",
+  "patterns": [
+    {
+      "include": "#selector-innards"
+    }
+  ]
+}

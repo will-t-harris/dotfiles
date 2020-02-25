@@ -1,0 +1,40 @@
+{
+  "patterns": [
+    {
+      "begin": "(?=&)",
+      "end": "\\s*(?={)",
+      "patterns": [
+        {
+          "include": "#selector"
+        }
+      ]
+    },
+    {
+      "name": "meta.findMe.self-closing",
+      "begin": "(?=@[\\w-]+[^;]+;s*$)",
+      "end": "(?<=;)(?!\\G)",
+      "patterns": [
+        {
+          "include": "#at-rule-header-extend"
+        }
+      ]
+    },
+    {
+      "name": "meta.findMe.nesting",
+      "begin": "(?=@[\\w-]+(\\s|\\(|{|/\\*|$))",
+      "end": "(?=\\s*[{;])",
+      "patterns": [
+        {
+          "include": "#at-rule-header-media"
+        },
+        {
+          "include": "#at-rule-header-nest"
+        },
+        {
+          "include": "#at-rule-header-supports"
+        }
+      ]
+    }
+  ]
+}
+

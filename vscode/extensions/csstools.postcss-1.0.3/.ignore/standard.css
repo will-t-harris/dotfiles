@@ -1,0 +1,107 @@
+div {
+	& > .form-elements {
+		display: flex;
+	}
+}
+
+body:last-child {
+	@media screen {}
+
+	@supports (display: grid) {
+		--name: blue;
+
+		color: var(--name);
+
+		@supports (display: grid) {
+			--name: blue;
+
+			color: var(--name);
+		}
+	}
+}
+
+@value blue: #0c77f8;
+@value red: #ff0000;
+@value green: #aaf200;
+
+@custom-env --name 30px;
+@custom-media --name (max-width: 320px);
+@custom-selector :--name h1, h2, h3, #foo, .foo, h6;
+@custom-selector :--name h1, h2, h3, h4, h5, #foo, .foo;
+@custom-selector :--name .foo, h2, h3, h4, h5, h6, #foo;
+@custom-selector :--name #foo, .foo, h2, h3, h4, h5, h6;
+
+@media (max-width: 640px) and (max-width: env(--name)) {
+	body:last-child {
+		composes: foo from 'bar';
+
+		--name: env(--name);
+
+		color: env(--name);
+		@extend a.foo, b.bar, div;
+		color: env(--name);
+
+		--name: env(--name);
+
+		color: env(--name);
+		color: var(--name, env(--name));
+	}
+}
+
+body:last-child {
+	--name: value;
+
+	color: var(--name);
+
+	& .foo {
+		--name: blue;
+
+		color: var(--name);
+
+		& .foo {
+			--name: blue;
+
+			color: var(--name);
+		}
+	}
+}
+
+body:last-child {
+	--name: value;
+
+	color: var(--name);
+
+	@nest .foo & {
+		--name: blue;
+
+		color: var(--name);
+
+		@nest .foo & {
+			--name: blue;
+
+			color: var(--name);
+		}
+	}
+}
+
+body:last-child:blank:is(div, .foo) {
+	@media (prefers-color-scheme: reduce) {
+		--name: lab(60% 20% 20%);
+		--font: system-ui, emoji;
+		border-block: 50px;
+		border-inline: 50px;
+		margin-block: 50px;
+		margin-inline: 50px;
+		padding-block: 50px;
+		padding-inline: 50px;
+		inset: 50px;
+
+		color: var(--name);
+
+		@media (max-width: 640px) {
+			--name: blue;
+
+			color: var(--name);
+		}
+	}
+}

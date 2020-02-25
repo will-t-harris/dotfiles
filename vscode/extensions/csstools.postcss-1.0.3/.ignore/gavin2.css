@@ -1,0 +1,38 @@
+body {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+
+	& > main {
+		@extend .w-grow;
+
+		display: flex;
+		justify-content: center;
+		padding-inline: inherit;
+
+		& .wrapper {
+			box-sizing: content-box;
+			flex-basis: 100%;
+			flex-shrink: 0;
+			padding-inline: inherit;
+		}
+	}
+
+	& > header,
+	& > footer {
+		@extend .w-shrink, .flex;
+
+		align-items: center;
+		justify-content: space-between;
+
+		& > * {
+			margin-block: unset;
+		}
+	}
+
+	& > :matches(header, footer) > nav {
+		@extend .w-shrink;
+
+		display: flex;
+	}
+}

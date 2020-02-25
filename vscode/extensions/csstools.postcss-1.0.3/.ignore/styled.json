@@ -1,0 +1,12 @@
+
+      {
+        "scopeName": "source.js.jsx.pcss",
+        "path": "./syntaxes/styled.pcss.tmLanguage.json",
+        "injectTo": [
+          "source.jsx",
+          "source.tsx",
+          "source.js",
+          "source.ts",
+          "source.es6"
+        ]
+      }

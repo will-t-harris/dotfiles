@@ -1,0 +1,6 @@
+,
+    "snippets": [
+      {
+        "language": "groovy",
+        "path": "./snippets/groovy.json"
+      }

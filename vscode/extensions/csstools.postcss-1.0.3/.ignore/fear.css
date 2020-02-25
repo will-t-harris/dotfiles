@@ -1,0 +1,15 @@
+.className {
+	color: green;
+	background: red;
+}
+
+.otherClassName {
+	composes: className;
+	color: yellow;
+}
+
+:global {
+	.global-class-name {
+		color: green;
+	}
+}

@@ -1,0 +1,93 @@
+a.css:is(code.selector) {
+	color: blue;
+
+	&.css:is(code.selector) {
+		color: green;
+	}
+
+	@nest a.css:is(code.selector) {
+		color: blue;
+
+		&.then:is(code.deeper) {
+			@nest a.css:is(code.selector) {
+				color: blue;
+			}
+		}
+	}
+
+	&.css:is(code.selector) {
+		color: green;
+	}
+
+	@media screen (--sm) {
+		color: blue;
+
+		&.css:is(code.selector) {
+			color: green;
+		}
+	}
+
+	&.css:is(code.selector) {
+		color: green;
+	}
+
+	@supports (display: grid) {
+		color: blue;
+
+		&.css:is(code.selector) {
+			color: green;
+		}
+	}
+
+	&.css:is(code.selector) {
+		color: green;
+	}
+}
+
+@media screen (max-width: 640px) {
+	a.css:is(code.selector) {
+		color: blue;
+
+		&.css:is(code.selector) {
+			color: green;
+		}
+
+		@nest a.css:is(code.selector) {
+			color: blue;
+
+			&.then:is(code.deeper) {
+				@nest a.css:is(code.selector) {
+					color: blue;
+				}
+			}
+		}
+
+		&.css:is(code.selector) {
+			color: green;
+		}
+
+		@media screen (max-width: 640px) {
+			color: blue;
+
+			&.css:is(code.selector) {
+				color: green;
+			}
+		}
+
+		&.css:is(code.selector) {
+			color: green;
+		}
+
+		@supports (display: grid) {
+			color: blue;
+
+			&.css:is(code.selector) {
+				color: green;
+			}
+		}
+
+		&.css:is(code.selector) {
+			color: green;
+		}
+	}
+}

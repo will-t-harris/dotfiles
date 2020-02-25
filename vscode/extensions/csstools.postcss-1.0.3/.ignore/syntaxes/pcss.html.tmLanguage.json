@@ -1,0 +1,15 @@
+{
+  "scopeName": "text.html.basic.pcss",
+  "injectionSelector": "L:text.html",
+  "patterns": [
+    {
+      "begin": "(?i)(?<=<style(\\s+[\\w-]+=\"[^\"]*\")*>)",
+      "end": "(?i)(?=</style>)",
+      "patterns": [
+        {
+          "include": "source.css.pcss"
+        }
+      ]
+    }
+  ]
+}

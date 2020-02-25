@@ -1,0 +1,136 @@
+{
+  "begin": "(?i)(?=@(custom-[\\w-]*)(\\s|/\\*|$))",
+  "end": "(?<=;)(?!\\G)",
+  "patterns": [
+    {
+      "begin": "(?i)\\G(@)(custom-media)",
+      "beginCaptures": {
+        "0": {
+          "name": "keyword.control.at-rule.custom-media.css"
+        },
+        "1": {
+          "name": "punctuation.definition.keyword.scss"
+        }
+      },
+      "end": ";",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.terminator.rule.css"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "\\s+(--[-a-zA-Z_][\\w-]*)",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#custom-media-variable"
+                }
+              ]
+            }
+          },
+          "end": "(?=;)(?!\\G)",
+          "patterns": [
+            {
+              "include": "#media-query-list"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)\\G(@)(custom-selector)",
+      "beginCaptures": {
+        "0": {
+          "name": "keyword.control.at-rule.custom-selector.css"
+        },
+        "1": {
+          "name": "punctuation.definition.keyword.scss"
+        }
+      },
+      "end": ";",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.terminator.rule.css"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "\\s+(:--[-a-zA-Z_][\\w-]*)",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "include": "#custom-selector-variable"
+                }
+              ]
+            }
+          },
+          "end": "(?=;)(?!\\G)",
+          "patterns": [
+            {
+              "include": "#selector-innards"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)\\G(@)(custom-env)",
+      "beginCaptures": {
+        "0": {
+          "name": "keyword.control.at-rule.custom-env.css"
+        },
+        "1": {
+          "name": "punctuation.definition.keyword.scss"
+        }
+      },
+      "end": ";",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.terminator.rule.css"
+        }
+      },
+      "patterns": [
+        {
+          "begin": "\\s+((--)[-a-zA-Z_][\\w-]*)",
+          "beginCaptures": {
+            "1": {
+              "name": "variable.env.css"
+            },
+            "2": {
+              "name": "punctuation.definition.variable.env.css"
+            }
+          },
+          "end": "(?=;)(?!\\G)",
+          "patterns": [
+            {
+              "include": "#comment-block"
+            },
+            {
+              "include": "#property-values"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "begin": "(?i)\\G(@)(custom-[\\w-]*)",
+      "beginCaptures": {
+        "0": {
+          "name": "keyword.control.at-rule.custom.css"
+        },
+        "1": {
+          "name": "punctuation.definition.keyword.css"
+        }
+      },
+      "end": ";",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.terminator.rule.css"
+        }
+      }
+    }
+  ]
+}

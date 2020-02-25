@@ -1,0 +1,11 @@
+{
+  "match": "(:--)[-a-zA-Z_][\\w-]*",
+  "captures": {
+    "0": {
+      "name": "variable.selector.css"
+    },
+    "1": {
+      "name": "punctuation.definition.variable.selector.css"
+    }
+  }
+}
