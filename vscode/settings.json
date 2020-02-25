@@ -17,5 +17,6 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "explorer.compactFolders": false,
-    "editor.multiCursorModifier": "ctrlCmd"
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.wordWrap": "on"
 }
