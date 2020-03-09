@@ -18,5 +18,8 @@
     },
     "explorer.compactFolders": false,
     "editor.multiCursorModifier": "ctrlCmd",
-    "editor.wordWrap": "on"
+    "editor.wordWrap": "on",
+    "files.associations": {
+        "*.svelte"; "html"
+    }
 }
