@@ -107,3 +107,6 @@ if [ -f '/home/will/.netlify/helper/path.zsh.inc' ]; then source '/home/will/.ne
 
 # Hook direnv into shell
 eval "$(direnv hook zsh)"
+
+# z command line utility
+. ~/dev/dotfiles/z/z.sh
