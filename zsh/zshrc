@@ -118,6 +118,9 @@ eval "$(direnv hook zsh)"
 # z command line utility
 . ~/dev/dotfiles/z/z.sh
 
+# zsh git-autocompletion (https://github.com/git/git/blob/master/contrib/completion/git-completion.zsh)
+fpath=(~/.zsh $fpath)
+
 # react-native path exports
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
