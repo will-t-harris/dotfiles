@@ -1,0 +1,36 @@
+Arguments: 
+  /usr/local/bin/node /usr/share/yarn/bin/yarn.js add -D @types/twin.macro
+
+PATH: 
+  /home/will/.netlify/helper/bin:/home/will/anaconda3/bin:/home/will/bin:/usr/local/bin:/home/will/.local/share/umake/bin:/home/will/.cargo/bin:/home/will/anaconda3/bin:/home/will/bin:/usr/local/bin:/home/will/.local/share/umake/bin:/home/will/.cargo/bin:/home/will/.cargo/bin:/home/will/.npm-global/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/will/.dotnet/tools:/home/will/Android/Sdk/emulator:/home/will/Android/Sdk/tools:/home/will/Android/Sdk/tools/bin:/home/will/Android/Sdk/platform-tools
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  13.9.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@types%2ftwin.macro: Not found
+      at Request.params.callback [as _callback] (/usr/share/yarn/lib/cli.js:66987:18)
+      at Request.self.callback (/usr/share/yarn/lib/cli.js:140748:22)
+      at Request.emit (events.js:321:20)
+      at Request.<anonymous> (/usr/share/yarn/lib/cli.js:141720:10)
+      at Request.emit (events.js:321:20)
+      at IncomingMessage.<anonymous> (/usr/share/yarn/lib/cli.js:141642:12)
+      at Object.onceWrapper (events.js:427:28)
+      at IncomingMessage.emit (events.js:333:22)
+      at endReadableNT (_stream_readable.js:1201:12)
+      at processTicksAndRejections (internal/process/task_queues.js:84:21)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

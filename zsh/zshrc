@@ -108,6 +108,10 @@ source $ZSH/oh-my-zsh.sh
 alias sup="sudo apt update && sudo apt upgrade"
 alias tm="gnome-system-monitor"
 alias git="/snap/hub/43/hub"
+alias s="git status -sb"
+alias ls="exa"
+alias l="exa -l"
+alias cat="bat"
 
 # The next line updates PATH for Netlify's Git Credential Helper.
 if [ -f '/home/will/.netlify/helper/path.zsh.inc' ]; then source '/home/will/.netlify/helper/path.zsh.inc'; fi
