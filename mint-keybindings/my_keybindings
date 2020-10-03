@@ -1,0 +1,73 @@
+[/]
+custom-list=['custom10', 'custom8', 'custom6', 'custom5', 'custom4', 'custom3', 'custom2', 'custom1', 'custom0', 'custom7', 'custom9', 'custom11']
+looking-glass-keybinding=@as []
+show-desklets=@as []
+
+[custom-keybindings/custom0]
+binding=['<Super>t']
+command='run-or-raise alacritty alacritty'
+name='alacritty'
+
+[custom-keybindings/custom1]
+binding=['<Super>b']
+command='run-or-raise firefox firefox'
+name='firefox'
+
+[custom-keybindings/custom10]
+binding=['<Super>l']
+command='run-or-raise todoist todoist'
+name='todoist'
+
+[custom-keybindings/custom11]
+binding=['<Super>g']
+command='run-or-raise figma-linux figma-linux'
+name='figma'
+
+[custom-keybindings/custom2]
+binding=['<Super>q']
+command='run-or-raise discord discord'
+name='discord'
+
+[custom-keybindings/custom3]
+binding=['<Super>k']
+command='run-or-raise slack slack'
+name='slack'
+
+[custom-keybindings/custom4]
+binding=['<Super>c']
+command='run-or-raise google-chrome google-chrome'
+name='chrome'
+
+[custom-keybindings/custom5]
+binding=['<Super>v']
+command='run-or-raise code code'
+name='vscode'
+
+[custom-keybindings/custom6]
+binding=['<Super>s']
+command='run-or-raise spotify spotify'
+name='spotify'
+
+[custom-keybindings/custom7]
+binding=['<Alt>t']
+command='gnome-system-monitor'
+name='task manager'
+
+[custom-keybindings/custom8]
+binding=['<Super>o']
+command='run-or-raise obsidian /home/will/Applications/Obsidian-0.8.14_829d204a16699c9f8b2bff4dcde46643.AppImage'
+name='obsidian'
+
+[custom-keybindings/custom9]
+binding=['<Super>apostrophe']
+command='run-or-raise notion /opt/notion/notion'
+name='notion'
+
+[media-keys]
+logout=['<Alt>l']
+shutdown=['<Alt>s', 'XF86PowerOff']
+video-rotation-lock=@as []
+
+[wm]
+maximize=['<Super>f']
+minimize=['<Super>m']
