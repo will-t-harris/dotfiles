@@ -110,6 +110,7 @@ alias l="exa -l"
 alias cat="bat"
 alias t="tmux"
 alias mg="google-drive-ocamlfuse ~/GoogleDrive"
+alias rm="trash"
 
 # The next line updates PATH for Netlify's Git Credential Helper.
 if [ -f '/home/will/.netlify/helper/path.zsh.inc' ]; then source '/home/will/.netlify/helper/path.zsh.inc'; fi
@@ -130,3 +131,5 @@ export NVM_DIR="$HOME/.nvm"
 # Postgresql
 PATH=/usr/local/pgsql/bin:$PATH
 export PATH
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
