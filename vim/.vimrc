@@ -1,5 +1,12 @@
 set nocompatible
+set number relativenumber
 let mapleader = ","
+
+set backupdir=$TMPDIR//
+set directory=$TMPDIR//
+
+" Prevent black background showing through in kitty terminal
+let &t_ut=''
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -17,10 +24,29 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'jparise/vim-graphql'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'w0rp/ale'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-commentary'
+Plug 'sheerun/vim-polyglot'
+Plug 'phanviet/vim-monokai-pro'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'kana/vim-textobj-entire'
+Plug 'kana/vim-textobj-line'
 
 call plug#end()
 
 let g:coc_global_extensions = ['coc-tsserver']
+
+" vim-commentary key mapping
+function! UnmapCommentary()
+  unmap gc
+  nunmap gcc
+  nunmap cgc
+  nunmap gcu
+endfunction
+
+nmap cm <Plug>Commentary
+nmap cml <Plug>CommentaryLine
 
 " Search down into subfolders recursively
 " Provides tab-completion for all file-related tasks
@@ -62,9 +88,11 @@ command! MakeTags !ctags -R .
 
 set autoindent
 
+" Color schema
+colorscheme monokai_pro
 
 " NERDTree
-autocmd VimEnter * NERDTree
+" autocmd VimEnter * NERDTree
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
@@ -86,3 +114,4 @@ let g:ale_fixers = {
 let g:ale_sign_error = '❌'
 let g:ale_sign_warning = '⚠️'
 let g:ale_fix_on_save = 1
+
