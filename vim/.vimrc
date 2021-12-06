@@ -34,6 +34,8 @@ Plug 'michaeljsmith/vim-indent-object'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-line'
+Plug 'bluz71/vim-nightfly-guicolors'
+Plug 'psliwka/vim-smoothie'
 
 call plug#end()
 
@@ -90,7 +92,7 @@ command! MakeTags !ctags -R .
 
 set autoindent
 
-" Color schema
+" Color scheme
 colorscheme monokai_pro
 
 " NERDTree
