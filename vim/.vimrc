@@ -38,11 +38,6 @@ Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-line'
 Plug 'haishanh/night-owl.vim'
 Plug 'pantharshit00/vim-prisma'
-if has('nvim') || has('patch-8.0.902')
-  Plug 'mhinz/vim-signify'
-else
-  Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
-endif
 
 call plug#end()
 
@@ -53,15 +48,15 @@ endif
 let g:coc_global_extensions = ['coc-tsserver']
 
 " vim-commentary key mapping
-function! UnmapCommentary()
-  unmap gc
-  nunmap gcc
-  nunmap cgc
-  nunmap gcu
-endfunction
+" function! UnmapCommentary()
+"   unmap gc
+"   nunmap gcc
+"   nunmap cgc
+"   nunmap gcu
+" endfunction
 
-nmap cm <Plug>Commentary
-nmap cml <Plug>CommentaryLine
+" nmap cm <Plug>Commentary
+" nmap cml <Plug>CommentaryLine
 
 " Search down into subfolders recursively
 " Provides tab-completion for all file-related tasks
@@ -170,5 +165,3 @@ let g:ale_sign_error = '❌'
 let g:ale_sign_warning = '⚠️'
 let g:ale_fix_on_save = 1
 
-" For vim-signify async update
-set updatetime=100
