@@ -131,3 +131,4 @@ export PATH="/usr/local/opt/php@7.4/sbin:$PATH"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export PATH="/Users/will/.local/share/solana/install/active_release/bin:$PATH"
+[ -f "/Users/will/.ghcup/env" ] && source "/Users/will/.ghcup/env" # ghcup-env
