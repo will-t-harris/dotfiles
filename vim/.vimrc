@@ -38,6 +38,8 @@ Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-line'
 Plug 'haishanh/night-owl.vim'
 Plug 'pantharshit00/vim-prisma'
+Plug 'tpope/vim-ragtag'
+Plug 'tpope/vim-unimpaired'
 
 call plug#end()
 
@@ -101,6 +103,7 @@ set autoindent
 " Color scheme
 syntax enable
 colorscheme monokai_pro
+" colorscheme night-owl
 
 " NERDTree
 " autocmd VimEnter * NERDTree
@@ -164,4 +167,8 @@ let g:ale_fixers = {
 let g:ale_sign_error = '❌'
 let g:ale_sign_warning = '⚠️'
 let g:ale_fix_on_save = 1
+
+inoremap <M-o>       <Esc>o
+inoremap <C-j>       <Down>
+let g:ragtag_global_maps = 1
 

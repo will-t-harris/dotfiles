@@ -109,6 +109,7 @@ alias rm="trash"
 alias gbsd="git branch --sort=-committerdate"
 alias gbsa="git branch --sort=committerdate"
 alias ngrok="~/dev/ngrok"
+alias lvim="/Users/will/.local/bin/lvim"
 
 
 . ~/dev/z/z.sh
@@ -132,3 +133,5 @@ export PATH="/usr/local/opt/php@7.4/sbin:$PATH"
 
 export PATH="/Users/will/.local/share/solana/install/active_release/bin:$PATH"
 [ -f "/Users/will/.ghcup/env" ] && source "/Users/will/.ghcup/env" # ghcup-env
+
+export PATH="/Users/will/.local/bin/lvim:$PATH"
