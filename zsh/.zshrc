@@ -110,6 +110,7 @@ alias gbsd="git branch --sort=-committerdate"
 alias gbsa="git branch --sort=committerdate"
 alias ngrok="~/dev/ngrok"
 alias lvim="/Users/will/.local/bin/lvim"
+alias nd="npm run dev"
 
 
 . ~/dev/z/z.sh
