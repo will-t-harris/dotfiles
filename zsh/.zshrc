@@ -102,6 +102,7 @@ source $ZSH/oh-my-zsh.sh
 alias cat="bat"
 alias ls="exa"
 alias l="exa -l"
+alias la="exa -la"
 alias mdt="timer 1 2 11 1"
 alias s="git status -sb"
 alias t="tmux"
@@ -111,6 +112,7 @@ alias gbsa="git branch --sort=committerdate"
 alias ngrok="~/dev/ngrok"
 alias lvim="/Users/will/.local/bin/lvim"
 alias nd="npm run dev"
+alias v="lvim"
 
 
 . ~/dev/z/z.sh
