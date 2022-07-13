@@ -167,3 +167,10 @@ export PATH="/Users/will/.local/bin/lvim:$PATH"
 export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+
+# bun completions
+[ -s "/Users/will/.bun/_bun" ] && source "/Users/will/.bun/_bun"
+
+# Bun
+export BUN_INSTALL="/Users/will/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
