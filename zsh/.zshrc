@@ -8,7 +8,11 @@ export ZSH="/Users/will/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="eastwood" # set by `omz`
+# ZSH_THEME="eastwood" # set by `omz`
+# ZSH_THEME="half-life"
+# ZSH_THEME="kennethreitz"
+# ZSH_THEME="lambda"
+ZSH_THEME="cdimascio-lambda"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -70,7 +74,9 @@ ZSH_THEME="eastwood" # set by `omz`
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git last-working-dir tmux alias-finder yarn)
+# export NVM_LAZY=1
+# export NVM_AUTOLOAD=1
+plugins=(git last-working-dir alias-finder yarn)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -106,52 +112,24 @@ alias la="exa -la"
 alias mdt="timer 1 2 11 1"
 alias s="git status -sb"
 alias t="tmux"
-alias rm="trash"
+# alias rm="trash"
 alias gbsd="git branch --sort=-committerdate"
 alias gbsa="git branch --sort=committerdate"
 alias ngrok="~/dev/ngrok"
 alias lvim="/Users/will/.local/bin/lvim"
 alias nd="npm run dev"
 alias v="lvim"
+alias n="nvim"
+alias pst="pnpm start"
 
 
 . ~/dev/z/z.sh
 
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# calls nvm use in any directory with a .nvmrc file
-autoload -U add-zsh-hook
-load-nvmrc() {
-	[[ -a .nvmrc ]] || return
-  local node_version="$(nvm version)"
-  local nvmrc_path="$(nvm_find_nvmrc)"
-
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$node_version" ]; then
-      nvm use
-    fi
-  elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
-
-ZSH_THEME="spaceship"
-
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/will/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/will/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+# if [ -f '/Users/will/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/will/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/will/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/will/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+# if [ -f '/Users/will/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/will/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
 export PATH="/usr/local/opt/php@7.4/bin:$PATH"
 export PATH="/usr/local/opt/php@7.4/sbin:$PATH"
@@ -168,9 +146,17 @@ export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 
-# bun completions
-[ -s "/Users/will/.bun/_bun" ] && source "/Users/will/.bun/_bun"
+timezsh() {
+  shell=${1-$SHELL}
+  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
+}
 
-# Bun
-export BUN_INSTALL="/Users/will/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+# add --use-on-cd to auto switch versions
+eval "$(fnm env --version-file-strategy recursive)"
+# Add Visual Studio Code (code)
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+# pnpm
+export PNPM_HOME="/Users/will/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
