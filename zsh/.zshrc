@@ -120,6 +120,7 @@ alias lvim="/Users/will/.local/bin/lvim"
 alias nd="npm run dev"
 alias v="lvim"
 alias n="nvim"
+alias p="pnpm"
 alias pst="pnpm start"
 
 
