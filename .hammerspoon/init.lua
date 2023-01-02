@@ -4,6 +4,8 @@ spoon.HoldToQuit:start()
 local move_windows = require("move_windows")
 move_windows.start()
 
+local hjkl_to_arrows = require("hjkl_to_arrows")
+
 local hyper = require("hyper")
 
 local config = {}
