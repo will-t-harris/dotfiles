@@ -161,3 +161,5 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 export PNPM_HOME="/Users/will/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+eval "$(atuin init zsh)"
