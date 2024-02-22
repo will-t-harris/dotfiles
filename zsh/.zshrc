@@ -101,10 +101,6 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 alias cat="bat"
 alias ls="exa"
 alias l="exa -l"
@@ -113,18 +109,14 @@ alias mdt="timer 1 2 11 1"
 alias s="git status -sb"
 alias t="tmux"
 # alias rm="trash"
-alias gbsd="git branch --sort=-committerdate"
-alias gbsa="git branch --sort=committerdate"
+alias gbsd="git branch --sort=-committerdate | fzf --height=20% | xargs git checkout"
+alias gbsa="git branch --sort=committerdate | fzf --height=20% | xargs git checkout"
 alias ngrok="~/dev/ngrok"
 alias lvim="/Users/will/.local/bin/lvim"
-alias nd="npm run dev"
-alias v="lvim"
 alias n="nvim"
 alias p="pnpm"
 alias pst="pnpm start"
-
-
-. ~/dev/z/z.sh
+alias cl="clear"
 
 # The next line updates PATH for the Google Cloud SDK.
 # if [ -f '/Users/will/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/will/Downloads/google-cloud-sdk/path.zsh.inc'; fi
@@ -140,12 +132,14 @@ export PATH="/usr/local/opt/php@7.4/sbin:$PATH"
 export PATH="/Users/will/.local/share/solana/install/active_release/bin:$PATH"
 [ -f "/Users/will/.ghcup/env" ] && source "/Users/will/.ghcup/env" # ghcup-env
 
-export PATH="/Users/will/.local/bin/lvim:$PATH"
-
 # Android Studio vars
 export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+
+# export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
+export PATH=$JAVA_HOME/bin:$PATH
 
 timezsh() {
   shell=${1-$SHELL}
@@ -159,7 +153,21 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 
 # pnpm
 export PNPM_HOME="/Users/will/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
 # pnpm end
 
-eval "$(atuin init zsh)"
+ATUIN_NOBIND=1 eval "$(atuin init zsh)"
+bindkey "^r" _atuin_search_widget
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/will/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/will/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/will/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/will/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+
+# autojump
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh

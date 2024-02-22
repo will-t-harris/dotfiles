@@ -12,25 +12,25 @@ local function remap(mods, key, pressFn)
 end
 
 
-remap({'cmd'}, 'h', pressFn('left'))
-remap({'cmd'}, 'j', pressFn('down'))
-remap({'cmd'}, 'k', pressFn('up'))
-remap({'cmd'}, 'l', pressFn('right'))
-
-remap({'ctrl', 'shift'}, 'h', pressFn({'shift'}, 'left'))
-remap({'ctrl', 'shift'}, 'j', pressFn({'shift'}, 'down'))
-remap({'ctrl', 'shift'}, 'k', pressFn({'shift'}, 'up'))
-remap({'ctrl', 'shift'}, 'l', pressFn({'shift'}, 'right'))
-
-remap({'ctrl', 'cmd'}, 'h', pressFn({'cmd'}, 'left'))
-remap({'ctrl', 'cmd'}, 'j', pressFn({'cmd'}, 'down'))
-remap({'ctrl', 'cmd'}, 'k', pressFn({'cmd'}, 'up'))
-remap({'ctrl', 'cmd'}, 'l', pressFn({'cmd'}, 'right'))
-
-remap({'ctrl', 'alt'}, 'h', pressFn({'alt'}, 'left'))
-remap({'ctrl', 'alt'}, 'j', pressFn({'alt'}, 'down'))
-remap({'ctrl', 'alt'}, 'k', pressFn({'alt'}, 'up'))
-remap({'ctrl', 'alt'}, 'l', pressFn({'alt'}, 'right'))
+remap({'alt'}, 'h', pressFn('left'))
+remap({'alt'}, 'j', pressFn('down'))
+remap({'alt'}, 'k', pressFn('up'))
+remap({'alt'}, 'l', pressFn('right'))
+--
+-- remap({'ctrl', 'shift'}, 'h', pressFn({'shift'}, 'left'))
+-- remap({'ctrl', 'shift'}, 'j', pressFn({'shift'}, 'down'))
+-- remap({'ctrl', 'shift'}, 'k', pressFn({'shift'}, 'up'))
+-- remap({'ctrl', 'shift'}, 'l', pressFn({'shift'}, 'right'))
+--
+-- remap({'ctrl', 'cmd'}, 'h', pressFn({'cmd'}, 'left'))
+-- remap({'ctrl', 'cmd'}, 'j', pressFn({'cmd'}, 'down'))
+-- remap({'ctrl', 'cmd'}, 'k', pressFn({'cmd'}, 'up'))
+-- remap({'ctrl', 'cmd'}, 'l', pressFn({'cmd'}, 'right'))
+--
+-- remap({'ctrl', 'alt'}, 'h', pressFn({'alt'}, 'left'))
+-- remap({'ctrl', 'alt'}, 'j', pressFn({'alt'}, 'down'))
+-- remap({'ctrl', 'alt'}, 'k', pressFn({'alt'}, 'up'))
+-- remap({'ctrl', 'alt'}, 'l', pressFn({'alt'}, 'right'))
 
 -- remap({'ctrl', 'shift', 'cmd'}, 'h', pressFn({'shift', 'cmd'}, 'left'))
 -- remap({'ctrl', 'shift', 'cmd'}, 'j', pressFn({'shift', 'cmd'}, 'down'))
