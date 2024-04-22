@@ -102,17 +102,15 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 alias cat="bat"
-alias ls="exa"
-alias l="exa -l"
-alias la="exa -la"
+alias ls="eza"
+alias l="eza -l"
+alias la="eza -la"
 alias mdt="timer 1 2 11 1"
 alias s="git status -sb"
 alias t="tmux"
 # alias rm="trash"
 alias gbsd="git branch --sort=-committerdate | fzf --height=20% | xargs git checkout"
 alias gbsa="git branch --sort=committerdate | fzf --height=20% | xargs git checkout"
-alias ngrok="~/dev/ngrok"
-alias lvim="/Users/will/.local/bin/lvim"
 alias n="nvim"
 alias p="pnpm"
 alias pst="pnpm start"
@@ -162,12 +160,7 @@ esac
 ATUIN_NOBIND=1 eval "$(atuin init zsh)"
 bindkey "^r" _atuin_search_widget
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/will/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/will/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/will/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/will/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-
 # autojump
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
+autoload -U compinit; compinit -y
+
